@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"time"
+	"os"
 )
 
 type Middleware func(http.HandlerFunc) http.HandlerFunc
@@ -63,7 +64,7 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	port += os.Getenv("PORT")
+	port := os.Getenv("PORT")
 	http.HandleFunc("/", Chain(Hello, Method("GET"), Logging()))
 	http.ListenAndServe(":"+port, nil)
 }
