@@ -63,6 +63,7 @@ func Hello(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port += os.Getenv("PORT")
 	http.HandleFunc("/", Chain(Hello, Method("GET"), Logging()))
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":"+port, nil)
 }
