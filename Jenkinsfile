@@ -4,7 +4,7 @@ node {
    echo 'Hello, from SCM checkout stage'
 
    // Get some code from a GitHub repository
-   git url: 'https://github.com/wonseobjoe/chat.git'
+   git url: 'https://github.com/wonseobjoe/go-middelware-demo.git'
    sh "git rev-parse --short HEAD > .git/commit-id"                        
    commit_id = readFile('.git/commit-id').trim()
 
@@ -23,5 +23,5 @@ node {
    // sh "output=$(pwd)"
    // sh "apc target cloud.explab.net"
    // sh "apc login --google"
-   sh "apc app create go-chat-demo --batch --start"
+   sh "apc app create go-middelware-demo --batch --start"
 }
