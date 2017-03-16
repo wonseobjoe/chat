@@ -25,7 +25,7 @@ node {
    // sh "apc login --google"
    // sh "apc app create go-middelware-demo --batch --start"
    sh "apc app create go-middleware-demo-${commit_id} --allow-egress --allow-ssh --batch"
-   sh "apc app update go-middleware-demo-${commit_id} --port-add 8080 --batch"
-   sh "apc route add http://go-middleware-demo-${commit_id}.wsjoe78.sandbox.cloud.explab.net --app go-middleware-demo-${commit_id} --port 8080 --batch"
+   // sh "apc app update go-middleware-demo-${commit_id} --port-add 8080 --batch"
+   sh "apc route add http://go-middleware-demo-${commit_id}.wsjoe78.sandbox.cloud.explab.net --app go-middleware-demo-${commit_id} --port 0 --batch"
    sh "apc app start go-middleware-demo-${commit_id} --batch"
 }
