@@ -23,5 +23,5 @@ node {
    // sh "output=$(pwd)"
    // sh "apc target cloud.explab.net"
    // sh "apc login --google"
-   sh "apc app create go-chat-demo --path target --batch --start"
+   sh "apc app create go-chat-demo --batch --start"
 }
