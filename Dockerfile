@@ -1,4 +1,4 @@
-FROM heroku/go:latest
+FROM go:latest
 # FROM alpine:latest
 
 MAINTAINER Roy Wonseob Joe <wsjoe78@gmail.com>
